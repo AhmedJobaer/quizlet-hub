@@ -6,7 +6,15 @@ const QuizAll = () => {
     console.log(quizData.data.questions);
     return (
         <div>
-            <h2>This is Quiz all.</h2>
+            {
+                quizData.data.questions.map(qs =>
+                    <div key={qs.id}>
+                        <h1>{qs.question}</h1>
+                        {qs.options.map(op => <li>{op}</li>)} <br></br>
+                    </div>
+
+                )
+            }
         </div>
     );
 };
