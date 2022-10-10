@@ -6,10 +6,24 @@ const Home = () => {
     const quizTopic = useLoaderData();
     console.log(quizTopic.data);
     return (
-        <div className='grid grid-cols-3 gap-4 m-24'>
-            {
-                quizTopic.data.map(quiz => <Quiz key={quiz.id} quiz={quiz}></Quiz>)
-            }
+        <div>
+            <div className='flex items-center'>
+                <div className=''>
+                    <h1 className='text-4xl ml-24'>Make big subjects
+                        easier to digest with
+                        flashcards and
+                        practice tests.</h1><br></br>
+                    <p className='text-2xl ml-24'>Join over 60 million students around the world using Quizlet's science-backed flashcards, practice tests and games to reach their goals at school, university and beyond.</p>
+                </div>
+                <div>
+                    <img src="https://img.freepik.com/premium-vector/quiz-comic-pop-art-style_175838-505.jpg?w=2000" alt="" />
+                </div>
+            </div>
+            <div className='grid grid-cols-3 gap-4 m-24'>
+                {
+                    quizTopic.data.map(quiz => <Quiz key={quiz.id} quiz={quiz}></Quiz>)
+                }
+            </div>
         </div>
     );
 };
