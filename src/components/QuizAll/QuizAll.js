@@ -1,4 +1,6 @@
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useLoaderData } from 'react-router-dom';
 import './QuizAll.css'
 
@@ -10,10 +12,10 @@ const QuizAll = () => {
         console.log(op)
         console.log(qs.correctAnswer);
         if (qs.correctAnswer === op) {
-            alert("correct");
+            toast("Correct answer!");
         }
         else {
-            alert("try again");
+            toast("Wrong answer!");
         }
 
     }
@@ -24,16 +26,20 @@ const QuizAll = () => {
             {
                 quizData.data.questions.map(qs =>
                     <div className="card w-3/4 bg-base-100 shadow-xl mx-auto my-10" key={qs.id}>
-                        <h1 className='bg-fuchsia-200 p-10 text-2xl'>{qs.question.replace(/<\/?[^>]+>/gi, '')}</h1>
+                        <h1 className='bg-fuchsia-200 p-10 text-2xl font-bold'>{qs.question.replace(/<\/?[^>]+>/gi, '')}</h1>
                         <p>{qs.correctAnswer}</p>
                         {qs.options.map(op =>
                             <div className='px-10'>
-                                <li className='object-center hide'><label><input type="checkbox" onClick={() => checkAnswer(qs, op)} />{op}
-                                </label> </li>
+                                <li className='hide'>
+                                    <label><input type="checkbox" onClick={() => checkAnswer(qs, op)} />
+                                        {op}
+                                    </label>
+                                </li>
                             </div>
                         )} <br></br>
                     </div>)
             }
+            <ToastContainer />
         </div>
     );
 };
