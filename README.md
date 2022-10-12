@@ -2,7 +2,7 @@
 QuiZlet-Hub Project using rect router.
 
 ## Live web-site link
-link:
+link: https://shimmering-centaur-de5699.netlify.app
 
 
 
