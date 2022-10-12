@@ -3,7 +3,6 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './layouts/Main';
 import Home from './components/Home/Home';
-import Topic from './components/Topic/Topic';
 import QuizAll from './components/QuizAll/QuizAll';
 import Statistic from './components/Statistic/Statistic';
 import Blog from './components/Blog/Blog';
