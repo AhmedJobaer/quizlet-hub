@@ -19,7 +19,7 @@ const Home = () => {
                     <img src="https://img.freepik.com/premium-vector/quiz-comic-pop-art-style_175838-505.jpg?w=2000" alt="" />
                 </div>
             </div>
-            <div className='grid grid-cols-3 gap-4 m-24'>
+            <div className='grid grid-cols-3 gap-4  m-24'>
                 {
                     quizTopic.data.map(quiz => <Quiz key={quiz.id} quiz={quiz}></Quiz>)
                 }

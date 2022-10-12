@@ -5,6 +5,7 @@ import Main from './layouts/Main';
 import Home from './components/Home/Home';
 import Topic from './components/Topic/Topic';
 import QuizAll from './components/QuizAll/QuizAll';
+import Statistic from './components/Statistic/Statistic';
 
 
 function App() {
@@ -30,6 +31,11 @@ function App() {
             return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizzesId}`)
           },
           element: <QuizAll></QuizAll>
+        },
+        {
+          path: '/statistic',
+          loader: () => fetch('https://openapi.programming-hero.com/api/quiz'),
+          element: <Statistic></Statistic>
         }
 
       ]
